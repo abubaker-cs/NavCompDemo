@@ -21,12 +21,14 @@ class VerifyDetailsFragment : Fragment() {
         // arguments = returns the arguments supplied
         // getString() = Get the arguments from the bundle.
         val name = arguments?.getString("name")
+        val age = arguments?.getString("age")
         val mobileNumber = arguments?.getLong("mobile")
 
         // Initialize the mBinding variable.
         binding = FragmentVerifyDetailsBinding.inflate(inflater, container, false)
 
         binding.tvName.text = name
+        binding.tvAge.text = age
         binding.tvMobileNumber.text = mobileNumber.toString()
 
         // return root View

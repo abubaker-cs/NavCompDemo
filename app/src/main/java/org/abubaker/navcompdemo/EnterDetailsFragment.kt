@@ -31,6 +31,7 @@ class EnterDetailsFragment : Fragment() {
 
             // Convert data to Strings
             val firstName = binding.etName.text.toString()
+            val age = binding.etAge.text.toString()
             val mobile = binding.etMobile.text.toString()
 
             // Validate the data
@@ -39,6 +40,11 @@ class EnterDetailsFragment : Fragment() {
                 // firstName = Empty?
                 firstName.isEmpty() -> {
                     Toast.makeText(activity, "Enter Name.", Toast.LENGTH_SHORT).show()
+                }
+
+                // firstName = Empty?
+                age.isEmpty() -> {
+                    Toast.makeText(activity, "Enter Your age.", Toast.LENGTH_SHORT).show()
                 }
 
                 // Mobile = Empty?
@@ -52,6 +58,7 @@ class EnterDetailsFragment : Fragment() {
                     // Pass them to verify details fragment using Bundle object.
                     val bundle = bundleOf(
                         "name" to firstName,
+                        "age" to age,
                         "mobile" to mobile.toLong()
                     )
 
