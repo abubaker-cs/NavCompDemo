@@ -33,6 +33,7 @@ android {
         // It will exclude the atomic functions module from the package and prevent warnings
         exclude 'META-INF/atomicfu.kotlin_module'
         exclude 'META-INF/LICENSE.md'
+        exclude 'META-INF/NOTICE.md'
         resources.excludes += "DebugProbesKt.bin"
 
     }
