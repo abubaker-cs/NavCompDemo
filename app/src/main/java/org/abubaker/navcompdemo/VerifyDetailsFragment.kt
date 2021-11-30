@@ -18,7 +18,10 @@ class VerifyDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        // Get the arguments first
         val args: VerifyDetailsFragmentArgs by navArgs()
+
+        // Retrieve values from the recently received arguments (args)
         val name = args.name
         val age = args.age
         val mobile = args.mobile

@@ -55,9 +55,14 @@ class EnterDetailsFragment : Fragment() {
                 else -> {
 
                     findNavController().navigate(
+
+                        // Pass Data
                         EnterDetailsFragmentDirections.actionEnterDetailsFragmentToVerifyDetailsFragment(
-                            firstName, age.toLong(), mobile.toLong()
+                            firstName,
+                            age.toLong(),
+                            mobile.toLong()
                         )
+
                     )
 
 
