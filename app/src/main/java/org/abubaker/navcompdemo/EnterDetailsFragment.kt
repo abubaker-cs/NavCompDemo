@@ -19,9 +19,6 @@ class EnterDetailsFragment : Fragment() {
     ): View? {
 
         // Inflate the layout for this fragment
-        // return inflater.inflate(R.layout.fragment_enter_details, container, false)
-
-        // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_enter_details, container, false)
 
         // Assign the click event to the Verify Details button.
@@ -35,6 +32,7 @@ class EnterDetailsFragment : Fragment() {
 
         }
 
+        //
         return rootView
 
     }
