@@ -23,14 +23,15 @@ class EnterDetailsFragment : Fragment() {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_enter_details, container, false)
 
-        // TODO Step 11: Assign the click event to the Verify Details button.
+        // Assign the click event to the Verify Details button.
         val btnVerifyDetails = rootView.findViewById<Button>(R.id.btn_verify_details)
 
         btnVerifyDetails.setOnClickListener {
 
-            // TODO Step 12: Navigate using findNavController and the action id where we want to navigate.
+            // Navigate using findNavController and the action id where we want to navigate.
             // findNavController().navigate(R.id.action_enterDetailsFragment_to_verifyDetailsFragment)
         }
+
         return rootView
 
     }
