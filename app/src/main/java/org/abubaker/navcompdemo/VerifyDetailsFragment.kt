@@ -18,7 +18,8 @@ class VerifyDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        // Get the arguments from the bundle.
+        // arguments = returns the arguments supplied
+        // getString() = Get the arguments from the bundle.
         val name = arguments?.getString("name")
         val mobileNumber = arguments?.getLong("mobile")
 

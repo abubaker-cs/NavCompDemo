@@ -29,19 +29,27 @@ class EnterDetailsFragment : Fragment() {
         // onClick Event for the Button: Verify Details
         binding.btnVerifyDetails.setOnClickListener {
 
-            // Validate the data and pass them to verify details fragment using Bundle object.
+            // Convert data to Strings
             val firstName = binding.etName.text.toString()
             val mobile = binding.etMobile.text.toString()
 
+            // Validate the data
             when {
+
+                // firstName = Empty?
                 firstName.isEmpty() -> {
                     Toast.makeText(activity, "Enter Name.", Toast.LENGTH_SHORT).show()
                 }
+
+                // Mobile = Empty?
                 mobile.isEmpty() -> {
                     Toast.makeText(activity, "Enter Mobile Number.", Toast.LENGTH_SHORT).show()
                 }
+
+                // Using the "bundle" pass on the data to the targeted Fragment
                 else -> {
 
+                    // Pass them to verify details fragment using Bundle object.
                     val bundle = bundleOf(
                         "name" to firstName,
                         "mobile" to mobile.toLong()
@@ -52,6 +60,7 @@ class EnterDetailsFragment : Fragment() {
                         R.id.action_enterDetailsFragment_to_verifyDetailsFragment,
                         bundle
                     )
+
                 }
             }
         }
