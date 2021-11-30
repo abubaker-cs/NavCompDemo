@@ -4,14 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import org.abubaker.navcompdemo.databinding.FragmentEnterDetailsBinding
 
 class EnterDetailsFragment : Fragment() {
+
+    // Create a global variable for the ViewBinding.
+    private lateinit var binding: FragmentEnterDetailsBinding
 
     /**
      * onCreateView()
@@ -19,26 +21,17 @@ class EnterDetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        // Inflate the layout for this fragment
-        val rootView = inflater.inflate(R.layout.fragment_enter_details, container, false)
-
-        // Map all the XML components using findViewById.
-        val etName = rootView.findViewById<EditText>(R.id.et_name)
-        val etMobileNumber = rootView.findViewById<EditText>(R.id.et_mobile)
-
-        // Assign the click event to the Verify Details button.
-        val btnVerifyDetails = rootView.findViewById<Button>(R.id.btn_verify_details)
+        // Initialize the mBinding variable.
+        binding = FragmentEnterDetailsBinding.inflate(inflater, container, false)
 
         // onClick Event for the Button: Verify Details
-        btnVerifyDetails.setOnClickListener {
+        binding.btnVerifyDetails.setOnClickListener {
 
-            // TODO Step 4: Validate the data and pass them to verify details fragment using Bundle object.
-            // START
-
-            val firstName = etName.text.toString()
-            val mobile = etMobileNumber.text.toString()
+            // Validate the data and pass them to verify details fragment using Bundle object.
+            val firstName = binding.etName.text.toString()
+            val mobile = binding.etMobile.text.toString()
 
             when {
                 firstName.isEmpty() -> {
@@ -63,8 +56,8 @@ class EnterDetailsFragment : Fragment() {
             }
         }
 
-        //
-        return rootView
+        // return root View
+        return binding.root
 
     }
 }
