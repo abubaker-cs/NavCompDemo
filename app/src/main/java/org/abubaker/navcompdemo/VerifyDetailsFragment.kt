@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import org.abubaker.navcompdemo.databinding.FragmentVerifyDetailsBinding
 
-
 class VerifyDetailsFragment : Fragment() {
 
     // Create a global variable for the ViewBinding.
