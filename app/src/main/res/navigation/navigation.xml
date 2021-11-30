@@ -18,5 +18,18 @@
         android:id="@+id/verifyDetailsFragment"
         android:name="org.abubaker.navcompdemo.VerifyDetailsFragment"
         android:label="fragment_verify_details"
-        tools:layout="@layout/fragment_verify_details" />
+        tools:layout="@layout/fragment_verify_details">
+        <argument
+            android:name="name"
+            android:defaultValue='""'
+            app:argType="string" />
+        <argument
+            android:name="age"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <argument
+            android:name="mobile"
+            android:defaultValue="0L"
+            app:argType="long" />
+    </fragment>
 </navigation>

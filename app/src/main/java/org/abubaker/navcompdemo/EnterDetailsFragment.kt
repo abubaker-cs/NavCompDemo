@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import org.abubaker.navcompdemo.databinding.FragmentEnterDetailsBinding
@@ -55,18 +54,26 @@ class EnterDetailsFragment : Fragment() {
                 // Using the "bundle" pass on the data to the targeted Fragment
                 else -> {
 
-                    // Pass them to verify details fragment using Bundle object.
-                    val bundle = bundleOf(
-                        "name" to firstName,
-                        "age" to age,
-                        "mobile" to mobile.toLong()
+                    findNavController().navigate(
+                        EnterDetailsFragmentDirections.actionEnterDetailsFragmentToVerifyDetailsFragment(
+                            firstName, age.toLong(), mobile.toLong()
+                        )
                     )
 
+
+                    // *** Replace the bundle code with Safe Args.
+                    // Pass them to verify details fragment using Bundle object.
+                    // val bundle = bundleOf(
+                    //    "name" to firstName,
+                    //    "age" to age,
+                    //    "mobile" to mobile.toLong()
+                    // )
+
                     // Navigate using findNavController and the action id where we want to navigate.
-                    findNavController().navigate(
-                        R.id.action_enterDetailsFragment_to_verifyDetailsFragment,
-                        bundle
-                    )
+                    // findNavController().navigate(
+                    //    R.id.action_enterDetailsFragment_to_verifyDetailsFragment,
+                    //    bundle
+                    // )
 
                 }
             }

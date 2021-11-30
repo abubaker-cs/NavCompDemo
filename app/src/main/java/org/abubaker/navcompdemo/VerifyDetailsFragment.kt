@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import org.abubaker.navcompdemo.databinding.FragmentVerifyDetailsBinding
 
 class VerifyDetailsFragment : Fragment() {
@@ -17,18 +18,23 @@ class VerifyDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        val args: VerifyDetailsFragmentArgs by navArgs()
+        val name = args.name
+        val age = args.age
+        val mobile = args.mobile
+
         // arguments = returns the arguments supplied
         // getString() = Get the arguments from the bundle.
-        val name = arguments?.getString("name")
-        val age = arguments?.getString("age")
-        val mobileNumber = arguments?.getLong("mobile")
+        // val name = arguments?.getString("name")
+        // val age = arguments?.getString("age")
+        // val mobileNumber = arguments?.getLong("mobile")
 
         // Initialize the mBinding variable.
         binding = FragmentVerifyDetailsBinding.inflate(inflater, container, false)
 
         binding.tvName.text = name
-        binding.tvAge.text = age
-        binding.tvMobileNumber.text = mobileNumber.toString()
+        binding.tvAge.text = age.toString()
+        binding.tvMobileNumber.text = mobile.toString()
 
         // return root View
         return binding.root
