@@ -27,6 +27,11 @@
             android:name="age"
             android:defaultValue="0L"
             app:argType="long" />
+
+        <!--
+           0 = Integer
+           0L = Long
+         -->
         <argument
             android:name="mobile"
             android:defaultValue="0L"
