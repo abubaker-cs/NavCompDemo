@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    // Override the below method and
+    // Override the below method
     override fun onSupportNavigateUp(): Boolean {
 
         // Pass the navController variable in it, after doing this the back button will be enable.
